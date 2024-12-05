@@ -22,10 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),  # 确保将根 URL 映射到您的视图
     path('house_management/', views.house_management, name='house_management'),
-    path('fee_management/', views.fee_management, name='fee_management'),
-    path('report_management/', views.report_management, name='report_management'),
-    path('repair_management/', views.repair_management, name='repair_management'),
-    path('announcement/', views.announcement, name='announcement'),
-    path('property_management/', views.property_management, name='property_management'),
-    path('permission_management/', views.permission_management, name='permission_management'),
+    path('communities/', views.community_list, name='community_list'),
+    path('houses/<int:community_id>/', views.house_list, name='house_list'),
+    path('house/edit/<int:house_id>/', views.house_edit, name='house_edit'),
+    path('owners/<int:house_id>/', views.owner_list, name='owner_list'),
+    path('owner/edit/<int:owner_id>/', views.owner_edit, name='owner_edit'),
 ]
